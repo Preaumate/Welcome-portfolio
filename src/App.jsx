@@ -35,7 +35,7 @@ function App() {
       <p className='read-the-docs'>
         Are you ready for the experience?
       </p>
-      <p> My favourite hobby
+      <p> This will be the 2nd commit
       </p>
     </>
   )
