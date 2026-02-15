@@ -1,3 +1,5 @@
+/* welcome dialog.jsx*/
+
 import { useState } from 'react'
 import './welcomeDialog.css'
 function WelcomeDialog() {
