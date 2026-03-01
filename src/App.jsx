@@ -7,6 +7,7 @@ import Button from './components/button'
 import Card from './components/Card'
 import Dropdown from './components/Dropdown'
 import CheckboxGroup from './components/CheckBoxGroup'
+import ContactForm from './components/ContactForm'
 
 function App() {
   const handleSkillSelect = (skill) => {
@@ -80,6 +81,8 @@ function App() {
         title="My Interests & Hobbies"
         options={interests}
       />
+
+      <ContactForm />
     </div>
   )
 }
