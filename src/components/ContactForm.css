@@ -11,12 +11,15 @@
   text-align: center;
   color: #333;
   margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
 .contact-subtitle {
   text-align: center;
   color: #666;
   margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .contact-form {
@@ -25,6 +28,7 @@
   gap: 1.5rem;
 }
 
+/* Form Groups */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -37,6 +41,7 @@
   font-size: 0.95rem;
 }
 
+/* Inputs and Textarea */
 .form-group input,
 .form-group textarea {
   padding: 0.75rem;
@@ -44,7 +49,7 @@
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
@@ -58,6 +63,7 @@
 .form-group textarea:disabled {
   background-color: #f5f5f5;
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .form-group textarea {
@@ -65,6 +71,57 @@
   min-height: 120px;
 }
 
+/* Error styling for inputs */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #dc3545;
+}
+
+.form-group input.error:focus,
+.form-group textarea.error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Error messages */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Label with character counter */
+.label-with-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-counter {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.character-counter.over-limit {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Submit Button */
 .submit-button {
   padding: 1rem 2rem;
   background-color: #646cff;
@@ -75,6 +132,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .submit-button:hover:not(:disabled) {
@@ -83,18 +141,24 @@
   box-shadow: 0 5px 15px rgba(100, 108, 255, 0.3);
 }
 
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
 .submit-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
   transform: none;
 }
 
+/* Status Messages */
 .status-message {
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   font-weight: 500;
   animation: slideIn 0.3s ease;
+  margin-top: 1rem;
 }
 
 .status-message.success {
@@ -117,5 +181,21 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
   }
 }
